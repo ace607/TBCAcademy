@@ -51,7 +51,7 @@ class ViewController: UIViewController {
                         result.text = String(firstValue - secondValue)
                     case "/":
                         if secondValue != 0 {
-                            result.text = String(firstValue / secondValue)
+                            result.text = String(Double(firstValue) / Double(secondValue))
                         } else {
                             result.text = "Can't divide by zero"
                         }
