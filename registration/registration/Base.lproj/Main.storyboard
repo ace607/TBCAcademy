@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfy-v3-mpv">
-                                <rect key="frame" x="99.5" y="144" width="215" height="29"/>
+                                <rect key="frame" x="99.5" y="114" width="215" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nee-CI-QNN">
-                                <rect key="frame" x="50" y="213" width="314" height="50"/>
+                                <rect key="frame" x="50" y="183" width="314" height="50"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="TTP-Wh-3Lz"/>
@@ -32,42 +32,42 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQF-dp-D8K">
-                                <rect key="frame" x="50" y="283" width="314" height="50"/>
+                                <rect key="frame" x="50" y="253" width="314" height="50"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u0m-IL-l8V">
-                                <rect key="frame" x="50" y="353" width="314" height="50"/>
+                                <rect key="frame" x="50" y="323" width="314" height="50"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8S3-dp-a6R">
-                                <rect key="frame" x="50" y="423" width="314" height="50"/>
+                                <rect key="frame" x="50" y="393" width="314" height="50"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="teO-Ka-JIv">
-                                <rect key="frame" x="50" y="493" width="314" height="50"/>
+                                <rect key="frame" x="50" y="463" width="314" height="50"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Pasword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EgV-1P-IwE">
-                                <rect key="frame" x="50" y="563" width="314" height="50"/>
+                                <rect key="frame" x="50" y="533" width="314" height="50"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9s9-RP-hAG">
-                                <rect key="frame" x="50" y="653" width="314" height="50"/>
+                                <rect key="frame" x="50" y="623" width="314" height="50"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,7 +104,7 @@
                             <constraint firstItem="8S3-dp-a6R" firstAttribute="leading" secondItem="u0m-IL-l8V" secondAttribute="leading" id="nJ0-nd-mqq"/>
                             <constraint firstItem="u0m-IL-l8V" firstAttribute="top" secondItem="YQF-dp-D8K" secondAttribute="bottom" constant="20" id="s9s-7F-kKH"/>
                             <constraint firstItem="teO-Ka-JIv" firstAttribute="leading" secondItem="8S3-dp-a6R" secondAttribute="leading" id="uKB-ku-nrU"/>
-                            <constraint firstItem="Sfy-v3-mpv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="vSQ-j2-lyV"/>
+                            <constraint firstItem="Sfy-v3-mpv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="vSQ-j2-lyV"/>
                             <constraint firstItem="9s9-RP-hAG" firstAttribute="top" secondItem="EgV-1P-IwE" secondAttribute="bottom" constant="40" id="wlb-tB-Oyg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nee-CI-QNN" secondAttribute="trailing" constant="50" id="x50-xw-MqK"/>
                             <constraint firstItem="u0m-IL-l8V" firstAttribute="height" secondItem="YQF-dp-D8K" secondAttribute="height" id="yHe-I8-Y4E"/>
