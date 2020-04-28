@@ -120,18 +120,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculate(_ sender: UIButton) {
-        performSegue(withIdentifier: "showInfo", sender: sender)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let info = segue.destination as? infoViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let infoVC   = storyboard.instantiateViewController(withIdentifier: "infoVC")
+        if let varInfoVC = infoVC as? infoViewController {
             for item in products {
-                info.productListArray.append(item.name!)
+                varInfoVC.productListArray.append(item.name!)
             }
-            info.total = totalPrice
-            info.mass = totalMass
+            varInfoVC.total = totalPrice
+            varInfoVC.mass = totalMass
         }
+        self.navigationController?.pushViewController(infoVC, animated: true)
     }
+
     
 }
 

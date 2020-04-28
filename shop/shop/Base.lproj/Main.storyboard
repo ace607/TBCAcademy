@@ -132,7 +132,7 @@
                         <outlet property="productNameField" destination="bIi-tg-zVS" id="nTr-S5-fAn"/>
                         <outlet property="productNumLabel" destination="QQ4-ub-uvS" id="soq-j0-gl4"/>
                         <outlet property="productPriceField" destination="swR-eI-eH9" id="j8J-2h-8LF"/>
-                        <segue destination="WLh-Ma-430" kind="push" identifier="showInfo" id="oRi-Km-qPZ"/>
+                        <segue destination="WLh-Ma-430" kind="push" identifier="infoView" id="oRi-Km-qPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -142,7 +142,7 @@
         <!--Info-->
         <scene sceneID="1Bp-ty-UOi">
             <objects>
-                <viewController id="WLh-Ma-430" customClass="infoViewController" customModule="shop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="infoVC" id="WLh-Ma-430" customClass="infoViewController" customModule="shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ek-sP-wzx" customClass="infoView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
