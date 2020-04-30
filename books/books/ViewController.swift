@@ -24,11 +24,6 @@ class ViewController: UIViewController, addBookProtocol {
     }
 
     @IBAction func addBookPage(_ sender: UIButton) {
-//        let addBookVC = addBookViewController()
-//        addBookVC.delegate = self
-//        present(addBookVC, animated: true, completion: nil)
-        
-        
         let storyboard = UIStoryboard(name : "Main" , bundle : nil)
         let addBookVC = storyboard.instantiateViewController(withIdentifier: "add_book")
         if let addBookPageVC = addBookVC as? addBookViewController{
@@ -36,13 +31,11 @@ class ViewController: UIViewController, addBookProtocol {
         }
         
         self.show(addBookVC, sender: true)
-        print(books.count)
     }
     
     func addBookToList(bookItem: [book]) {
         books.append(contentsOf: bookItem)
         bookList.reloadData()
-        print(books.count)
     }
 }
 
