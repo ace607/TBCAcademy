@@ -25,6 +25,8 @@ class addCarViewController: UIViewController {
     @IBOutlet weak var modelTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,17 @@ class addCarViewController: UIViewController {
         
         carImagesTable.delegate = self
         carImagesTable.dataSource = self
+        
+        
+        modelTextField.setLeftPaddingPoints(25)
+        modelTextField.setRightPaddingPoints(25)
+        modelTextField.layer.cornerRadius = 25
+        yearTextField.setLeftPaddingPoints(25)
+        yearTextField.setRightPaddingPoints(25)
+        yearTextField.layer.cornerRadius = 25
+        priceTextField.setLeftPaddingPoints(25)
+        priceTextField.setRightPaddingPoints(25)
+        priceTextField.layer.cornerRadius = 25
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -85,4 +98,17 @@ extension addCarViewController: UITableViewDelegate {
         selectedImageIndex = indexPath.row
     }
     
+}
+
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
 }

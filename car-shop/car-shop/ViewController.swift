@@ -12,9 +12,12 @@ class ViewController: UIViewController, addCarProtocol {
 
     @IBOutlet weak var carTable: UITableView!
     
+    @IBOutlet weak var scrollTopBtn: UIButton!
+    @IBOutlet weak var scrollBottomBtn: UIButton!
+    
     var cars = [Car]()
     
-    var scrollPosition = -1
+    var scrollPosition = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,17 @@ class ViewController: UIViewController, addCarProtocol {
         
         carTable.delegate = self
         carTable.dataSource = self
+        
+        scrollTopBtn.layer.cornerRadius = 25
+        scrollBottomBtn.layer.cornerRadius = 25
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if self.scrollPosition == 0 {
+            self.scrollTop()
+        } else if self.scrollPosition == 1 {
+            self.scrollBottom()
+        }
     }
     
     func scrollTop() {
@@ -59,11 +73,6 @@ class ViewController: UIViewController, addCarProtocol {
     func addCarObject(car: Car) {
         cars.append(car)
         carTable.reloadData()
-        if self.scrollPosition == 0 {
-            self.scrollTop()
-        } else if self.scrollPosition == 1 {
-            self.scrollBottom()
-        }
     }
 }
 
@@ -74,7 +83,7 @@ struct Car {
     var image: String?
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cars.count
     }
@@ -92,9 +101,5 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
-    
-}
-
-extension ViewController: UITableViewDelegate {
     
 }

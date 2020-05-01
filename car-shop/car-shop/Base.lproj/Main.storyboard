@@ -127,6 +127,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="carTable" destination="YCC-Rn-cem" id="YsL-MM-J76"/>
+                        <outlet property="scrollBottomBtn" destination="K73-zT-813" id="jJL-Cy-NVx"/>
+                        <outlet property="scrollTopBtn" destination="hyD-9b-bNL" id="hdQ-dN-xO3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
