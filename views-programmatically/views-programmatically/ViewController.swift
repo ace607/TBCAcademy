@@ -120,8 +120,8 @@ class ViewController: UIViewController {
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.addTarget(self, action: #selector(onSliderChange), for: .valueChanged)
         slider.minimumValue = 0
-        slider.maximumValue = 2
-        slider.value = 1
+        slider.maximumValue = 150
+        slider.value = 100
         return slider
     }()
     
@@ -330,8 +330,12 @@ class ViewController: UIViewController {
        selectedView = 2
     }
 
+    
     @objc func onSliderChange() {
-        
+        view1Height.constant = CGFloat(sizeSlider.value)
+        view1Width.constant = CGFloat(sizeSlider.value)
+        view2Height.constant = CGFloat(sizeSlider.value)
+        view2Width.constant = CGFloat(sizeSlider.value)
     }
 }
 
