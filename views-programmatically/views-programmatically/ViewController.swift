@@ -331,11 +331,25 @@ class ViewController: UIViewController {
     }
 
     
+    // ვერ მივხვდი ზუსტად როგორ უნდა შეცვლილიყო სიმაღლე და სიგანე პირდაპირ სლაიდერის value უნდა მიმენიჭებინა თუ უბრალოდ უნდა გაეზარდა რამდენითაც შეიცვლებოდა value იმდენით, პირველის შემთხვევაში ტექსტფილდებიდან თუ ვუცვლით სიმაღლეს და სიგანეს მერე ისევ სლაიდერის value-ზე აყენებს და მეორე დავტოვე,პირველი დაკომენტარებულია ქვემოთ.
+    
+    
+//    @objc func onSliderChange() {
+//        view1Height.constant = CGFloat(sizeSlider.value)
+//        view1Width.constant = CGFloat(sizeSlider.value)
+//        view2Height.constant = CGFloat(sizeSlider.value)
+//        view2Width.constant = CGFloat(sizeSlider.value)
+//    }
+    
+    var lastSliderValue: Float = 100
+    
     @objc func onSliderChange() {
-        view1Height.constant = CGFloat(sizeSlider.value)
-        view1Width.constant = CGFloat(sizeSlider.value)
-        view2Height.constant = CGFloat(sizeSlider.value)
-        view2Width.constant = CGFloat(sizeSlider.value)
+        view1Height.constant += CGFloat(sizeSlider.value - lastSliderValue)
+        view1Width.constant += CGFloat(sizeSlider.value - lastSliderValue)
+        view2Height.constant += CGFloat(sizeSlider.value - lastSliderValue)
+        view2Width.constant += CGFloat(sizeSlider.value - lastSliderValue)
+        
+        lastSliderValue = sizeSlider.value
     }
 }
 
