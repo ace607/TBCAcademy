@@ -12,7 +12,7 @@ protocol addPost {
     func newPost(content: String)
 }
 
-class addPostViewController: UIViewController {
+class addPostViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var postContent: UITextView!
     
     var addPostDelegate: addPost?
@@ -36,8 +36,31 @@ class addPostViewController: UIViewController {
             addPostDelegate?.newPost(content: postContent.text!)
             self.navigationController?.popViewController(animated: true)
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+    }
     /*
     // MARK: - Navigation
 

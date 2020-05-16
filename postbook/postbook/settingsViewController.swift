@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class settingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class settingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var currentImage: UIImageView!
     @IBOutlet weak var currentName: UITextField!
     @IBOutlet weak var currentLastName: UITextField!
@@ -57,8 +57,30 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onImageViewTapped))
         currentImage.isUserInteractionEnabled = true
         currentImage.addGestureRecognizer(tapGesture)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+    }
     
     @objc func onImageViewTapped() {
         imagePicker.delegate = self
