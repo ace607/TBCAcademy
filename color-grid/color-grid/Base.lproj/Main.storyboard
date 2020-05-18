@@ -82,7 +82,7 @@
         <!--Joke View Controller-->
         <scene sceneID="5Vf-Mo-T3I">
             <objects>
-                <viewController storyboardIdentifier="joke_vc" id="8Fq-RP-7oz" customClass="jokeViewController" customModule="color_grid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="joke_vc" id="8Fq-RP-7oz" customClass="JokeViewController" customModule="color_grid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0z-kg-qwt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

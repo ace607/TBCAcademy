@@ -34,18 +34,10 @@ struct Color: Codable {
     }
 }
 
-struct Joke {
-    let jokeText: String
-    let jokeIcon: String
-    
-}
 
 class ViewController: UIViewController {
     
     var colors = [Color]()
-    var joke: Joke?
-    var currentJoke: String?
-    var currentIcon: UIImage?
     var currentColor: UIColor?
 
     @IBOutlet weak var colorCollection: UICollectionView!
@@ -57,7 +49,6 @@ class ViewController: UIViewController {
         colorCollection.dataSource = self
         getColors()
         
-        getJoke()
     }
     
     func getColors() {
@@ -80,35 +71,10 @@ class ViewController: UIViewController {
     }
     
     
-    func getJoke() {
-        let url = URL(string: "https://api.chucknorris.io/jokes/random?category=dev")!
-        URLSession.shared.dataTask(with: url) { (data, res, err) in
-            
-            guard let jokeData = data else {return}
-            
-            let json = try? JSONSerialization.jsonObject(with: jokeData, options: [])
-            
-            guard let jsonDictionary = json as? [String:Any] else {return}
-            
-            self.joke = Joke(jokeText: jsonDictionary["value"] as! String, jokeIcon: jsonDictionary["icon_url"] as! String)
-            
-            self.currentJoke = self.joke!.jokeText
-
-            self.joke!.jokeIcon.downloadImage { (image) in
-                DispatchQueue.main.async {
-                    self.currentIcon = image
-                }
-            }
-        }.resume()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier, identifier == "joke_segue" {
-            if let jokeVC = segue.destination as? jokeViewController {
-                getJoke()
+            if let jokeVC = segue.destination as? JokeViewController {
                 jokeVC.getJokeColor = currentColor
-                jokeVC.getJokeImage = currentIcon
-                jokeVC.getJokeText = currentJoke
             }
         }
     }
@@ -188,14 +154,6 @@ extension String {
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
-    }
-    
-    func downloadImage(completion: @escaping (UIImage?) -> ()) {
-        guard let url = URL(string: self) else {return}
-        URLSession.shared.dataTask(with: url) { (data, res, err) in
-            guard let data = data else {return}
-            completion(UIImage(data: data))
-        }.resume()
     }
     
 }

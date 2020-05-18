@@ -15,7 +15,7 @@
 		849CEEEC2472994200EC2820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849CEEEB2472994200EC2820 /* Assets.xcassets */; };
 		849CEEEF2472994200EC2820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849CEEED2472994200EC2820 /* LaunchScreen.storyboard */; };
 		849CEEF724729B4E00EC2820 /* colorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849CEEF624729B4E00EC2820 /* colorCollectionViewCell.swift */; };
-		849CEEF92472B41900EC2820 /* jokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849CEEF82472B41900EC2820 /* jokeViewController.swift */; };
+		849CEEF92472B41900EC2820 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849CEEF82472B41900EC2820 /* JokeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		849CEEEE2472994200EC2820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		849CEEF02472994300EC2820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849CEEF624729B4E00EC2820 /* colorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorCollectionViewCell.swift; sourceTree = "<group>"; };
-		849CEEF82472B41900EC2820 /* jokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jokeViewController.swift; sourceTree = "<group>"; };
+		849CEEF82472B41900EC2820 /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				849CEEF02472994300EC2820 /* Info.plist */,
 				849CEEE82472993B00EC2820 /* color_grid.xcdatamodeld */,
 				849CEEF624729B4E00EC2820 /* colorCollectionViewCell.swift */,
-				849CEEF82472B41900EC2820 /* jokeViewController.swift */,
+				849CEEF82472B41900EC2820 /* JokeViewController.swift */,
 			);
 			path = "color-grid";
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849CEEE42472993B00EC2820 /* ViewController.swift in Sources */,
-				849CEEF92472B41900EC2820 /* jokeViewController.swift in Sources */,
+				849CEEF92472B41900EC2820 /* JokeViewController.swift in Sources */,
 				849CEEE02472993B00EC2820 /* AppDelegate.swift in Sources */,
 				849CEEF724729B4E00EC2820 /* colorCollectionViewCell.swift in Sources */,
 				849CEEE22472993B00EC2820 /* SceneDelegate.swift in Sources */,
