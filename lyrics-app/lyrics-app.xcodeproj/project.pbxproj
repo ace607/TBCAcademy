@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8449212F2473ECC300B40181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449212E2473ECC300B40181 /* AppDelegate.swift */; };
+		844921312473ECC300B40181 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844921302473ECC300B40181 /* SceneDelegate.swift */; };
+		844921332473ECC300B40181 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844921322473ECC300B40181 /* ViewController.swift */; };
+		844921362473ECC300B40181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844921342473ECC300B40181 /* Main.storyboard */; };
+		844921392473ECC300B40181 /* lyrics_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 844921372473ECC300B40181 /* lyrics_app.xcdatamodeld */; };
+		8449213B2473ECCD00B40181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8449213A2473ECCD00B40181 /* Assets.xcassets */; };
+		8449213E2473ECCD00B40181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8449213C2473ECCD00B40181 /* LaunchScreen.storyboard */; };
+		844921462473EF3000B40181 /* BandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844921452473EF3000B40181 /* BandCollectionViewCell.swift */; };
+		844921482474290D00B40181 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844921472474290D00B40181 /* InfoViewController.swift */; };
+		8449214C247430E000B40181 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449214B247430E000B40181 /* SongTableViewCell.swift */; };
+		8449215024745A9800B40181 /* LyricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449214F24745A9800B40181 /* LyricsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8449212B2473ECC300B40181 /* lyrics-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lyrics-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8449212E2473ECC300B40181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		844921302473ECC300B40181 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		844921322473ECC300B40181 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		844921352473ECC300B40181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		844921382473ECC300B40181 /* lyrics_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lyrics_app.xcdatamodel; sourceTree = "<group>"; };
+		8449213A2473ECCD00B40181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8449213D2473ECCD00B40181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8449213F2473ECCD00B40181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844921452473EF3000B40181 /* BandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandCollectionViewCell.swift; sourceTree = "<group>"; };
+		844921472474290D00B40181 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		8449214B247430E000B40181 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		8449214F24745A9800B40181 /* LyricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		844921282473ECC300B40181 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		844921222473ECC200B40181 = {
+			isa = PBXGroup;
+			children = (
+				8449212D2473ECC300B40181 /* lyrics-app */,
+				8449212C2473ECC300B40181 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8449212C2473ECC300B40181 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8449212B2473ECC300B40181 /* lyrics-app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8449212D2473ECC300B40181 /* lyrics-app */ = {
+			isa = PBXGroup;
+			children = (
+				8449212E2473ECC300B40181 /* AppDelegate.swift */,
+				844921302473ECC300B40181 /* SceneDelegate.swift */,
+				844921322473ECC300B40181 /* ViewController.swift */,
+				844921342473ECC300B40181 /* Main.storyboard */,
+				8449213A2473ECCD00B40181 /* Assets.xcassets */,
+				8449213C2473ECCD00B40181 /* LaunchScreen.storyboard */,
+				8449213F2473ECCD00B40181 /* Info.plist */,
+				844921372473ECC300B40181 /* lyrics_app.xcdatamodeld */,
+				844921452473EF3000B40181 /* BandCollectionViewCell.swift */,
+				844921472474290D00B40181 /* InfoViewController.swift */,
+				8449214B247430E000B40181 /* SongTableViewCell.swift */,
+				8449214F24745A9800B40181 /* LyricsViewController.swift */,
+			);
+			path = "lyrics-app";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8449212A2473ECC300B40181 /* lyrics-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844921422473ECCD00B40181 /* Build configuration list for PBXNativeTarget "lyrics-app" */;
+			buildPhases = (
+				844921272473ECC300B40181 /* Sources */,
+				844921282473ECC300B40181 /* Frameworks */,
+				844921292473ECC300B40181 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "lyrics-app";
+			productName = "lyrics-app";
+			productReference = 8449212B2473ECC300B40181 /* lyrics-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		844921232473ECC200B40181 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Mishka TBC";
+				TargetAttributes = {
+					8449212A2473ECC300B40181 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 844921262473ECC300B40181 /* Build configuration list for PBXProject "lyrics-app" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 844921222473ECC200B40181;
+			productRefGroup = 8449212C2473ECC300B40181 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8449212A2473ECC300B40181 /* lyrics-app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		844921292473ECC300B40181 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8449213E2473ECCD00B40181 /* LaunchScreen.storyboard in Resources */,
+				8449213B2473ECCD00B40181 /* Assets.xcassets in Resources */,
+				844921362473ECC300B40181 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		844921272473ECC300B40181 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844921332473ECC300B40181 /* ViewController.swift in Sources */,
+				844921392473ECC300B40181 /* lyrics_app.xcdatamodeld in Sources */,
+				8449215024745A9800B40181 /* LyricsViewController.swift in Sources */,
+				8449212F2473ECC300B40181 /* AppDelegate.swift in Sources */,
+				8449214C247430E000B40181 /* SongTableViewCell.swift in Sources */,
+				844921462473EF3000B40181 /* BandCollectionViewCell.swift in Sources */,
+				844921482474290D00B40181 /* InfoViewController.swift in Sources */,
+				844921312473ECC300B40181 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		844921342473ECC300B40181 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844921352473ECC300B40181 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8449213C2473ECCD00B40181 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8449213D2473ECCD00B40181 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		844921402473ECCD00B40181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		844921412473ECCD00B40181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		844921432473ECCD00B40181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "lyrics-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mishka.tbc.lyrics-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		844921442473ECCD00B40181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "lyrics-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mishka.tbc.lyrics-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		844921262473ECC300B40181 /* Build configuration list for PBXProject "lyrics-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844921402473ECCD00B40181 /* Debug */,
+				844921412473ECCD00B40181 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		844921422473ECCD00B40181 /* Build configuration list for PBXNativeTarget "lyrics-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844921432473ECCD00B40181 /* Debug */,
+				844921442473ECCD00B40181 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		844921372473ECC300B40181 /* lyrics_app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				844921382473ECC300B40181 /* lyrics_app.xcdatamodel */,
+			);
+			currentVersion = 844921382473ECC300B40181 /* lyrics_app.xcdatamodel */;
+			path = lyrics_app.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 844921232473ECC200B40181 /* Project object */;
+}
