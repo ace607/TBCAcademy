@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="android_vs_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="POv-Sl-uX4">
+                                <rect key="frame" x="87" y="144" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="6GB-2G-XrS"/>
+                                    <constraint firstAttribute="height" constant="150" id="d8V-AS-f3i"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="android vs iOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1y-81-YUP">
+                                <rect key="frame" x="136" y="344" width="142.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVm-fu-Pse">
+                                <rect key="frame" x="107" y="419.5" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.30980392159999998" green="0.2784313725" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="P9P-XY-h8S"/>
+                                    <constraint firstAttribute="height" constant="50" id="cGe-XC-ks1"/>
+                                </constraints>
+                                <state key="normal" title="Choose Your Platform">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChoose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdr-ni-2Bc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by iOS gang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hp-bF-5id">
+                                <rect key="frame" x="127.5" y="791" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="j1y-81-YUP" firstAttribute="centerX" secondItem="POv-Sl-uX4" secondAttribute="centerX" id="Cq1-MX-o6c"/>
+                            <constraint firstItem="POv-Sl-uX4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="D51-iX-vbk"/>
+                            <constraint firstItem="KVm-fu-Pse" firstAttribute="centerX" secondItem="j1y-81-YUP" secondAttribute="centerX" id="RBp-MU-rXn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Hp-bF-5id" secondAttribute="bottom" constant="50" id="W21-K9-9kc"/>
+                            <constraint firstItem="POv-Sl-uX4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYE-QW-OBd"/>
+                            <constraint firstItem="6Hp-bF-5id" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ewd-QI-cbR"/>
+                            <constraint firstItem="KVm-fu-Pse" firstAttribute="top" secondItem="j1y-81-YUP" secondAttribute="bottom" constant="50" id="uVp-GH-ONR"/>
+                            <constraint firstItem="j1y-81-YUP" firstAttribute="top" secondItem="POv-Sl-uX4" secondAttribute="bottom" constant="50" id="xlU-rh-aUY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="KVm-fu-Pse" id="zwU-zn-iWs"/>
+                        <outlet property="resultImage" destination="POv-Sl-uX4" id="CE7-3e-qaF"/>
+                        <outlet property="resultLabel" destination="j1y-81-YUP" id="hN6-5Y-hmM"/>
+                        <segue destination="SrC-dr-eCT" kind="show" identifier="choose_platform_segue" id="Vuh-Fm-pUp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="114"/>
+        </scene>
+        <!--Platforms View Controller-->
+        <scene sceneID="d3E-cq-Axv">
+            <objects>
+                <viewController id="SrC-dr-eCT" customClass="PlatformsViewController" customModule="android_vs_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f8Z-JD-10L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platforms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCg-5U-GZl">
+                                <rect key="frame" x="157" y="70" width="100.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HMx-LK-Unh">
+                                <rect key="frame" x="87" y="166.5" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="NGs-Ie-RCu"/>
+                                    <constraint firstAttribute="height" constant="150" id="TXy-Ia-XzC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aPV-Yi-0Os">
+                                <rect key="frame" x="87" y="366.5" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bhZ-dl-LEQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="sAC-9R-UKk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aPV-Yi-0Os" firstAttribute="top" secondItem="HMx-LK-Unh" secondAttribute="bottom" constant="50" id="7pF-hV-UQQ"/>
+                            <constraint firstItem="HMx-LK-Unh" firstAttribute="centerX" secondItem="kCg-5U-GZl" secondAttribute="centerX" id="92t-f8-DIK"/>
+                            <constraint firstItem="HMx-LK-Unh" firstAttribute="top" secondItem="kCg-5U-GZl" secondAttribute="bottom" constant="70" id="E0N-x6-m8j"/>
+                            <constraint firstItem="aPV-Yi-0Os" firstAttribute="centerX" secondItem="HMx-LK-Unh" secondAttribute="centerX" id="GZ3-Wa-hCr"/>
+                            <constraint firstItem="kCg-5U-GZl" firstAttribute="top" secondItem="YWi-4J-bly" secondAttribute="top" constant="70" id="QFD-7l-rsE"/>
+                            <constraint firstItem="kCg-5U-GZl" firstAttribute="centerX" secondItem="f8Z-JD-10L" secondAttribute="centerX" id="icR-Lv-lne"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YWi-4J-bly"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OOI-By-ePp"/>
+                    <connections>
+                        <outlet property="androidImage" destination="aPV-Yi-0Os" id="ka6-ZS-BTs"/>
+                        <outlet property="iosImage" destination="HMx-LK-Unh" id="BLz-r3-hf3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oP7-Pi-b1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="114"/>
+        </scene>
+    </scenes>
+</document>
