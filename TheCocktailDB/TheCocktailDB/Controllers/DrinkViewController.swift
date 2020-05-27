@@ -37,6 +37,12 @@ class DrinkViewController: UIViewController {
     
     var isFavorite = false
     
+    var service = APIServices()
+    
+    var ingredients = [Ingredient]()
+    
+    var selectedIngredient: Ingredient?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +70,31 @@ class DrinkViewController: UIViewController {
         drinkCategory.text = currentDrink?.category
         instructionText.text = currentDrink?.instructions
         
-        isCreative.text = currentDrink?.creative
+        if currentDrink?.creative == "Yes" {
+            creativeImage.tintColor = UIColor.systemYellow
+            creativeImage.image = UIImage(systemName: "star.fill")
+            isCreative.text = "Creative"
+        } else {
+            creativeImage.tintColor = UIColor.black
+            creativeImage.image = UIImage(systemName: "star")
+            isCreative.text = "Ordinary"
+        }
         drinkGlass.text = currentDrink?.glass
+        
+        
         isAlcoholic.text = currentDrink?.alcoholic
         
+        if currentDrink?.alcoholic == "" {
+            isAlcoholic.text = "Non Alcoholic"
+        }
+        
         favoriteBtn.layer.cornerRadius = 30
+        
+        for item in currentDrink!.ingredients! {
+            self.service.fetchIngredient(name: item.0) { (ingredient) in
+                self.ingredients.append(ingredient)
+            }
+        }
 
     }
     
@@ -98,11 +124,30 @@ class DrinkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier, identifier == "from_drink_to_ingredient" {
+            if let ingredientVC = segue.destination as? IngredientDetailsViewController {
+                ingredientVC.currentIngredient = selectedIngredient
+                selectedIngredient = nil
+            }
+        }
+    }
 
 }
 
 extension DrinkViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for ingredient in ingredients {
+            if ingredient.name == currentDrink?.ingredients![indexPath.row].0 {
+                selectedIngredient = ingredient
+            }
+        }
+
+        if let _ = selectedIngredient {
+            performSegue(withIdentifier: "from_drink_to_ingredient", sender: nil)
+        }
+    }
 }
 
 extension DrinkViewController: UITableViewDataSource {

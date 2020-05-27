@@ -18,7 +18,7 @@ class CategoryViewController: UIViewController {
     var currentCategory: String?
     var items = [Drink]()
     
-    var service = APIServices()
+    let service = APIServices()
     
     var selectedDrink: Drink?
     
