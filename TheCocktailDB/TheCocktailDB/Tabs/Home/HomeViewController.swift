@@ -291,26 +291,6 @@ class HomeViewController: UIViewController {
     @objc func allIngredients() {
         self.performSegue(withIdentifier: "ingredient_list_segue", sender: nil)
     }
-    
-    func addGradientToView(view: UIView) {
-        //gradient layer
-        let gradientLayer = CAGradientLayer()
-        
-        //define colors
-        gradientLayer.colors = [UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0).cgColor, UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.2).cgColor, UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5).cgColor]
-        
-        //define locations of colors as NSNumbers in range from 0.0 to 1.0
-        //if locations not provided the colors will spread evenly
-        gradientLayer.locations = [0.0, 0.7, 1]
-        
-        //define frame
-        gradientLayer.frame = view.bounds
-        gradientLayer.cornerRadius = 10
-        gradientLayer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
-        //insert the gradient layer to the view layer
-        view.layer.insertSublayer(gradientLayer, at: 0)
-    }
 
     
     @IBAction func onRandomFav(_ sender: UIButton) {
@@ -330,19 +310,10 @@ class HomeViewController: UIViewController {
     
     @IBAction func onRandomReload(_ sender: UIButton) {
 
-        sender.layer.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.6).cgColor
-        sender.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.3, animations: {
-            sender.layer.transform = CATransform3DMakeRotation(.pi, 0, 0, 1)
-        }) { (f) in
-            
-        }
-        UIView.animate(withDuration: 0.3, delay: 0.15, options: .curveEaseIn, animations: {
-            sender.layer.transform = CATransform3DMakeRotation(.pi * 2.0, 0, 0, 1)
-        }) { (f) in
-            sender.layer.backgroundColor = UIColor.systemBlue.cgColor
-        }
-        
+        UIView.transition(with: randomDrinkView, duration: 0.7, options: .transitionFlipFromLeft,
+        animations: {
+        }, completion: nil)
+
         service.fetchRandom() { (drink) in
             
             var ingredientText = ""
@@ -362,7 +333,6 @@ class HomeViewController: UIViewController {
                 self.randomDrinkName.text = drink.name
                 self.randomDrinkCategory.text = drink.category
                 self.randomDrinkIngredients.text = ingredientText
-                sender.isUserInteractionEnabled = true
             }
         }
     }
@@ -451,7 +421,7 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.labelBg.layer.cornerRadius = 10
             cell.labelBg.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             cell.drinkName.text = category1Drinks[indexPath.row].name
-            addGradientToView(view: cell.labelBg)
+            cell.labelBg.addGradientToView()
             return cell
         }
         

@@ -18,6 +18,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var repeatPasswordField: UITextField!
     @IBOutlet weak var signUpBtn: UIButton!
     
+    let cd = CDServices()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,7 +63,7 @@ class SignUpViewController: UIViewController {
             showAlert(title: "Error", message: "Passwords don't match!!")
         } else {
             var userCanRegister = true
-            for user in fetchUsers() {
+            for user in cd.fetchUsers() {
                 if user.username == userNameField.text || user.email == emailField.text {
                     showAlert(title: "Error", message: "User with this credentials already exists!!")
                     userCanRegister = false
@@ -69,7 +71,7 @@ class SignUpViewController: UIViewController {
             }
             
             if userCanRegister {
-                addUser(username: userNameField.text!, firstname: firstNameField.text!, lastname: lastNameField.text!, email: emailField.text!, password: passwordField.text!)
+                cd.addUser(username: userNameField.text!, firstname: firstNameField.text!, lastname: lastNameField.text!, email: emailField.text!, password: passwordField.text!)
                 self.dismiss(animated: true, completion: nil)
             }
             
@@ -87,45 +89,4 @@ class SignUpViewController: UIViewController {
     }
     */
 
-}
-
-extension SignUpViewController {
-    func addUser(username: String, firstname: String, lastname: String, email: String, password: String) {
-        
-        let context = AppDelegate.coreDataContainer.viewContext
-        let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: context)
-        
-        let user = User(entity: entityDescription!, insertInto: context)
-        
-        user.username = username
-        user.email = email
-        user.firstname = firstname
-        user.lastname = lastname
-        user.password = password
-
-        do {
-            try context.save()
-        } catch {
-            
-        }
-
-      
-    }
-    func fetchUsers() -> [User] {
-        let context = AppDelegate.coreDataContainer.viewContext
-
-        let request: NSFetchRequest<User> = User.fetchRequest()
-
-        do {
-            let result = try context.fetch(request)
-
-            let users = result as [User]
-
-            return users
-        } catch {
-            print("ERROR: Couldn't fetch podcasts")
-        }
-
-        return []
-    }
 }

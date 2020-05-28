@@ -20,6 +20,8 @@ class SignInViewController: UIViewController {
     
     var signInDelegate: SignIn?
     
+    let cd = CDServices()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,11 +46,11 @@ class SignInViewController: UIViewController {
         
         if userNameField.text == "" || passwordField.text == "" {
             showAlert(title: "Error", message: "Please, fill all fields.")
-        } else if fetchUsers().count == 0 {
+        } else if cd.fetchUsers().count == 0 {
             showAlert(title: "Error", message: "Please register a user.")
         } else {
             var userFound = false
-            for user in fetchUsers() {
+            for user in cd.fetchUsers() {
                 if user.username == userNameField.text && user.password == passwordField.text {
                     userFound = true
                 }
@@ -66,26 +68,7 @@ class SignInViewController: UIViewController {
     }
     
 }
-extension SignInViewController {
-    
-    func fetchUsers() -> [User] {
-        let context = AppDelegate.coreDataContainer.viewContext
-        
-        let request: NSFetchRequest<User> = User.fetchRequest()
-        
-        do {
-            let result = try context.fetch(request)
-            
-            let users = result as [User]
-            
-            return users
-        } catch {
-            print("ERROR: Couldn't fetch podcasts")
-        }
-        
-        return []
-    }
-}
+
 
 extension UITextField {
     func setLeftPaddingPoints(_ amount:CGFloat){

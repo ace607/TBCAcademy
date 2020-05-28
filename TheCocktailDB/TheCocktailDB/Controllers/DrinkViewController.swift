@@ -37,6 +37,7 @@ class DrinkViewController: UIViewController {
     
     var isFavorite = false
     
+    let cd = CDServices()
     var service = APIServices()
     
     var ingredients = [Ingredient]()
@@ -108,11 +109,19 @@ class DrinkViewController: UIViewController {
 
     @IBAction func addToFavorites(_ sender: UIButton) {
         if isFavorite {
+            for favorite in cd.getFavorites() {
+                if favorite.id == currentDrink?.id {
+                    self.cd.removeFavorite(favorite: favorite)
+                }
+            }
             favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
             isFavorite = false
+            NotificationCenter.default.post(name: NSNotification.Name("update_favorite"), object: nil)
         } else {
+            cd.addToFavorites(currentDrink!.id!)
             favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             isFavorite = true
+            NotificationCenter.default.post(name: NSNotification.Name("update_favorite"), object: nil)
         }
     }
     /*
