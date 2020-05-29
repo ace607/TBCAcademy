@@ -88,7 +88,6 @@ extension CategoryViewController: UICollectionViewDataSource {
         cell.itemImage.layer.cornerRadius = 10
         cell.labelView.layer.cornerRadius = 10
         cell.labelView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        cell.labelView.addGradientToView()
         
         return cell
     }

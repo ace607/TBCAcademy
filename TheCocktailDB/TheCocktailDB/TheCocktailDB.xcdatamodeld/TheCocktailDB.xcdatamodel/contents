@@ -5,6 +5,11 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="favorites" inverseEntity="User"/>
     </entity>
+    <entity name="Recent" representedClassName="Recent" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="recents" inverseEntity="User"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="firstname" optional="YES" attributeType="String"/>
@@ -12,9 +17,11 @@
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <relationship name="favorites" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Favorite" inverseName="user" inverseEntity="Favorite"/>
+        <relationship name="recents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Recent" inverseName="user" inverseEntity="Recent"/>
     </entity>
     <elements>
         <element name="Favorite" positionX="-63" positionY="18" width="128" height="88"/>
-        <element name="User" positionX="-262.625" positionY="-32.5390625" width="128" height="133"/>
+        <element name="User" positionX="-262.625" positionY="-32.5390625" width="128" height="148"/>
+        <element name="Recent" positionX="-113.203125" positionY="-89.52734375" width="128" height="88"/>
     </elements>
 </model>

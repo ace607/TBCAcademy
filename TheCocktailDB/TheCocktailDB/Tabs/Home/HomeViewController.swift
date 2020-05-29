@@ -52,6 +52,7 @@ class HomeViewController: UIViewController {
     var isRandomFavorite = false
     
     
+    let cd = CDServices()
     let service = APIServices()
     var categoryList = [String]()
     var selectedCategories = Set<Int>()
@@ -117,7 +118,7 @@ class HomeViewController: UIViewController {
                                 DispatchQueue.main.async {
                                     self.categoryLabel1.text = self.categoryList[item]
                                    
-                                    if self.category1Drinks.count > 1 {
+                                    if self.category1Drinks.count > 5 {
                                         self.category1Drinks.shuffle()
                                     }
 
@@ -134,7 +135,7 @@ class HomeViewController: UIViewController {
                                 DispatchQueue.main.async {
                                     self.category2Label.text = self.categoryList[item]
                                     
-                                    if self.category2Drinks.count > 1 {
+                                    if self.category2Drinks.count > 5 {
                                         self.category2Drinks.shuffle()
                                     }
 
@@ -151,7 +152,7 @@ class HomeViewController: UIViewController {
                                 DispatchQueue.main.async {
                                     self.category3Label.text = self.categoryList[item]
                                     
-                                    if self.category3Drinks.count > 1 {
+                                    if self.category3Drinks.count > 5 {
                                         self.category3Drinks.shuffle()
                                     }
                                     
@@ -168,7 +169,7 @@ class HomeViewController: UIViewController {
                                 DispatchQueue.main.async {
                                     self.category4Label.text = self.categoryList[item]
                                     
-                                    if self.category4Drinks.count > 1 {
+                                    if self.category4Drinks.count > 5{
                                         self.category4Drinks.shuffle()
                                     }
                                     
@@ -201,6 +202,14 @@ class HomeViewController: UIViewController {
                 self.randomDrinkName.text = drink.name
                 self.randomDrinkCategory.text = drink.category
                 self.randomDrinkIngredients.text = ingredientText
+
+                if self.cd.isFavorite(id: drink.id!) {
+                    self.isRandomFavorite = true
+                    self.randomFavBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                } else {
+                    self.isRandomFavorite = false
+                    self.randomFavBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
             }
         }
         
@@ -210,7 +219,7 @@ class HomeViewController: UIViewController {
                 self.service.fetchIngredient(name: ingredient) { (ingredient) in
                     self.ingredients.append(ingredient)
                     DispatchQueue.main.async {
-                        if ingredients.count > 1 {
+                        if self.ingredients.count > 5 {
                             self.ingredients.shuffle()
                         }
                         
@@ -261,8 +270,26 @@ class HomeViewController: UIViewController {
         
         ingredientsAll.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(allIngredients)))
         ingredientsArrow.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(allIngredients)))
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didRecieveFavorite(with:)),
+            name: NSNotification.Name("update_favorite"),
+            object: nil)
+        
     }
+    
+    @objc func didRecieveFavorite(with notification: Notification) {
 
+        if self.cd.isFavorite(id: self.randomDrink!.id!) {
+            self.isRandomFavorite = true
+            self.randomFavBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            self.isRandomFavorite = false
+            self.randomFavBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        
+    }
     override func updateViewConstraints() {
         randomImageHeight.constant = randomDrinkImage.frame.width
         super.updateViewConstraints()
@@ -295,11 +322,19 @@ class HomeViewController: UIViewController {
     
     @IBAction func onRandomFav(_ sender: UIButton) {
         if isRandomFavorite {
+            for favorite in cd.getFavorites() {
+                if favorite.id == randomDrink?.id {
+                    self.cd.removeFavorite(favorite: favorite)
+                }
+            }
             randomFavBtn.setImage(UIImage(systemName: "heart"), for: .normal)
             isRandomFavorite = false
+            NotificationCenter.default.post(name: NSNotification.Name("update_favorite"), object: nil)
         } else {
+            cd.addToFavorites(randomDrink!.id!)
             randomFavBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             isRandomFavorite = true
+            NotificationCenter.default.post(name: NSNotification.Name("update_favorite"), object: nil)
         }
     }
     
@@ -310,7 +345,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func onRandomReload(_ sender: UIButton) {
 
-        UIView.transition(with: randomDrinkView, duration: 0.7, options: .transitionFlipFromLeft,
+        UIView.transition(with: randomDrinkView, duration: 0.5, options: .transitionFlipFromLeft,
         animations: {
         }, completion: nil)
 
@@ -333,6 +368,14 @@ class HomeViewController: UIViewController {
                 self.randomDrinkName.text = drink.name
                 self.randomDrinkCategory.text = drink.category
                 self.randomDrinkIngredients.text = ingredientText
+                
+                if self.cd.isFavorite(id: drink.id!) {
+                    self.isRandomFavorite = true
+                    self.randomFavBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                } else {
+                    self.isRandomFavorite = false
+                    self.randomFavBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
             }
         }
     }
@@ -421,7 +464,6 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.labelBg.layer.cornerRadius = 10
             cell.labelBg.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             cell.drinkName.text = category1Drinks[indexPath.row].name
-            cell.labelBg.addGradientToView()
             return cell
         }
         
@@ -434,7 +476,6 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.labelBg.layer.cornerRadius = 10
             cell.labelBg.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             cell.drinkName.text = category2Drinks[indexPath.row].name
-            cell.labelBg.addGradientToView()
             return cell
         }
         
@@ -457,7 +498,6 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.labelBg.layer.cornerRadius = 10
             cell.labelBg.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             cell.drinkName.text = category3Drinks[indexPath.row].name
-            cell.labelBg.addGradientToView()
             return cell
         }
         
@@ -470,7 +510,6 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.labelBg.layer.cornerRadius = 10
             cell.labelBg.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             cell.drinkName.text = category4Drinks[indexPath.row].name
-            cell.labelBg.addGradientToView()
             return cell
         }
         
@@ -505,24 +544,4 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension UIView {
-    func addGradientToView() {
-        //gradient layer
-        let gradientLayer = CAGradientLayer()
-        
-        //define colors
-        gradientLayer.colors = [UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0).cgColor, UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.2).cgColor, UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5).cgColor]
-        
-        //define locations of colors as NSNumbers in range from 0.0 to 1.0
-        //if locations not provided the colors will spread evenly
-        gradientLayer.locations = [0.0, 0.7, 1]
-        
-        //define frame
-        gradientLayer.frame = self.bounds
-        gradientLayer.cornerRadius = 10
-        gradientLayer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
-        //insert the gradient layer to the view layer
-        self.layer.insertSublayer(gradientLayer, at: 0)
-    }
-}
+

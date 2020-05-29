@@ -20,18 +20,18 @@ class CDServices {
         do {
             let result = try context.fetch(request)
             
-            var currentUser = User()
+            var currentUser: User?
             for user in result {
                 if user.username == UDManager.getUser() {
                     currentUser = user
                 }
             }
             
-            return currentUser
+            return currentUser!
         } catch {
             print("ERROR: Couldn't fetch podcasts")
         }
-        return User()
+        return User(context: context)
     }
     
     func fetchUsers() -> [User] {
@@ -109,9 +109,6 @@ class CDServices {
                 user = userMatch
             }
         }
-        for item in ((user!.favorites?.allObjects as NSArray?) as! [Favorite]).sorted(by: { ($0.date!).compare($1.date!) == .orderedDescending }) {
-            print(item.id)
-        }
         
         return ((user!.favorites?.allObjects as NSArray?) as! [Favorite]).sorted(by: { ($0.date!).compare($1.date!) == .orderedDescending })
     }
@@ -124,5 +121,55 @@ class CDServices {
         } catch {
             
         }
+    }
+    
+    func isFavorite(id: String) -> Bool {
+        
+        for favorite in getFavorites() {
+            if favorite.id == id {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    
+    func addToRecents(_ id: String) {
+        
+        let context = AppDelegate.coreDataContainer.viewContext
+        let entityDescriptionRecent = NSEntityDescription.entity(forEntityName: "Recent", in: context)
+        
+        var user: User?
+        
+        for userMatch in fetchUsers() {
+            if userMatch.username == UDManager.getUser() {
+                user = userMatch
+            }
+        }
+        let recent = Recent(entity: entityDescriptionRecent!, insertInto: context)
+        
+        recent.id = id
+        recent.user = user
+        recent.date = Date()
+
+        do {
+            try context.save()
+        } catch {
+            
+        }
+    }
+    
+    
+    func getRecents() -> [Recent] {
+        var user: User?
+        
+        for userMatch in fetchUsers() {
+            if userMatch.username == UDManager.getUser() {
+                user = userMatch
+            }
+        }
+        
+        return ((user!.recents?.allObjects as NSArray?) as! [Recent]).sorted(by: { ($0.date!).compare($1.date!) == .orderedDescending })
     }
 }

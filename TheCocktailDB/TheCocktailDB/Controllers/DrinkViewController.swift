@@ -57,6 +57,9 @@ class DrinkViewController: UIViewController {
                 break
             }
         }
+        
+        cd.addToRecents(currentDrink!.id!)
+        NotificationCenter.default.post(name: NSNotification.Name("update_recent"), object: nil)
 
         let url = URL(string: (currentDrink?.image)!)
         drinkImage.kf.setImage(with: url)
@@ -95,6 +98,11 @@ class DrinkViewController: UIViewController {
             self.service.fetchIngredient(name: item.0) { (ingredient) in
                 self.ingredients.append(ingredient)
             }
+        }
+        
+        if cd.isFavorite(id: currentDrink!.id!) {
+            isFavorite = true
+            favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
 
     }

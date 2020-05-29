@@ -79,7 +79,7 @@ class IngredientDetailsViewController: UIViewController {
     
     
     override func updateViewConstraints() {
-        drinksTableHeight.constant = CGFloat(ingredientDrinks.count * 110)
+        drinksTableHeight.constant = CGFloat(ingredientDrinks.count * 111)
         if ingredientDrinks.count == 0 {
             drinksTableTitle.text = ""
         } else {

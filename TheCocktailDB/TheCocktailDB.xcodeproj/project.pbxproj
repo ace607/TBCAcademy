@@ -11,6 +11,9 @@
 		840124BF247EA22A007B8911 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840124BE247EA22A007B8911 /* ProfileViewController.swift */; };
 		840124C3247EA546007B8911 /* CDServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840124C2247EA546007B8911 /* CDServices.swift */; };
 		84049F04247FB1D7003ABF66 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049F03247FB1D7003ABF66 /* FavoriteCollectionViewCell.swift */; };
+		84049F06247FDB8B003ABF66 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049F05247FDB8B003ABF66 /* RecentTableViewCell.swift */; };
+		84049F0A2480148D003ABF66 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049F092480148D003ABF66 /* FavoriteViewController.swift */; };
+		84049F0C24801583003ABF66 /* FavoriteListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049F0B24801583003ABF66 /* FavoriteListCollectionViewCell.swift */; };
 		8468027E247BBE6700265052 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468027D247BBE6700265052 /* DrinkViewController.swift */; };
 		84680280247BCE6C00265052 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468027F247BCE6C00265052 /* IngredientTableViewCell.swift */; };
 		84680282247BDB9500265052 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84680281247BDB9500265052 /* TagCollectionViewCell.swift */; };
@@ -46,6 +49,9 @@
 		840124BE247EA22A007B8911 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		840124C2247EA546007B8911 /* CDServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDServices.swift; sourceTree = "<group>"; };
 		84049F03247FB1D7003ABF66 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		84049F05247FDB8B003ABF66 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
+		84049F092480148D003ABF66 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		84049F0B24801583003ABF66 /* FavoriteListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListCollectionViewCell.swift; sourceTree = "<group>"; };
 		8468027D247BBE6700265052 /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		8468027F247BCE6C00265052 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		84680281247BDB9500265052 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 			children = (
 				840124BE247EA22A007B8911 /* ProfileViewController.swift */,
 				84049F03247FB1D7003ABF66 /* FavoriteCollectionViewCell.swift */,
+				84049F05247FDB8B003ABF66 /* RecentTableViewCell.swift */,
 			);
 			path = "My Space";
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 				84680285247C1F5700265052 /* CategoryViewController.swift */,
 				84B49FEE247D50860043EBBE /* IngredientListViewController.swift */,
 				84B49FF2247D59390043EBBE /* IngredientDetailsViewController.swift */,
+				84049F092480148D003ABF66 /* FavoriteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 				84B49FEC247D49D70043EBBE /* Ingredient.swift */,
 				84B49FF0247D512E0043EBBE /* IngredientListCollectionViewCell.swift */,
 				84012493247E5E09007B8911 /* IngredientDrinkTableViewCell.swift */,
+				84049F0B24801583003ABF66 /* FavoriteListCollectionViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,7 +308,10 @@
 				84B49FE9247D0F420043EBBE /* SearchTableViewCell.swift in Sources */,
 				84680280247BCE6C00265052 /* IngredientTableViewCell.swift in Sources */,
 				848D8AD624790B850021F271 /* ViewController.swift in Sources */,
+				84049F0C24801583003ABF66 /* FavoriteListCollectionViewCell.swift in Sources */,
+				84049F0A2480148D003ABF66 /* FavoriteViewController.swift in Sources */,
 				84B49FE7247D0ED50043EBBE /* SearchViewController.swift in Sources */,
+				84049F06247FDB8B003ABF66 /* RecentTableViewCell.swift in Sources */,
 				848D48B42479A6230066D6B9 /* HomeViewController.swift in Sources */,
 				848D8AD224790B850021F271 /* AppDelegate.swift in Sources */,
 				848D8AD424790B850021F271 /* SceneDelegate.swift in Sources */,
