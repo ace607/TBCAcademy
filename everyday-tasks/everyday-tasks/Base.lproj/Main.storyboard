@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="everyday_tasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2oS-VE-nTN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="task_cell" id="7M9-W4-nQ6" customClass="TaskTableViewCell" customModule="everyday_tasks" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7M9-W4-nQ6" id="jt9-JF-80d">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJZ-Mt-WMP">
+                                                    <rect key="frame" x="20" y="15" width="73" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItJ-OY-Daf">
+                                                    <rect key="frame" x="356" y="15" width="38" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ItJ-OY-Daf" secondAttribute="bottom" constant="15" id="4DY-pa-frZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="ItJ-OY-Daf" secondAttribute="trailing" constant="20" id="88y-ry-ZKk"/>
+                                                <constraint firstItem="ItJ-OY-Daf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jJZ-Mt-WMP" secondAttribute="trailing" constant="30" id="9R3-1F-LdB"/>
+                                                <constraint firstAttribute="bottom" secondItem="jJZ-Mt-WMP" secondAttribute="bottom" constant="15" id="Cqp-ub-AHx"/>
+                                                <constraint firstItem="ItJ-OY-Daf" firstAttribute="top" secondItem="jt9-JF-80d" secondAttribute="top" constant="15" id="i7x-Qv-1xu"/>
+                                                <constraint firstItem="jJZ-Mt-WMP" firstAttribute="top" secondItem="jt9-JF-80d" secondAttribute="top" constant="15" id="p8N-EF-Srn"/>
+                                                <constraint firstItem="jJZ-Mt-WMP" firstAttribute="leading" secondItem="jt9-JF-80d" secondAttribute="leading" constant="20" id="wp5-af-FPC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskTime" destination="ItJ-OY-Daf" id="rjT-TV-qXi"/>
+                                            <outlet property="taskTitle" destination="jJZ-Mt-WMP" id="q32-ed-dew"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2oS-VE-nTN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4aN-AH-2Px"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2oS-VE-nTN" secondAttribute="trailing" id="Mr2-fC-QSY"/>
+                            <constraint firstItem="2oS-VE-nTN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ggD-hs-bEc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2oS-VE-nTN" secondAttribute="bottom" id="tdi-yF-gff"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="taskTable" destination="2oS-VE-nTN" id="GG8-Jw-qVG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="130"/>
+        </scene>
+    </scenes>
+</document>
