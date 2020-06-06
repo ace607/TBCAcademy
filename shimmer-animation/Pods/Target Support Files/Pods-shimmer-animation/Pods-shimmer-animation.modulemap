@@ -1,0 +1,6 @@
+framework module Pods_shimmer_animation {
+  umbrella header "Pods-shimmer-animation-umbrella.h"
+
+  export *
+  module * { export * }
+}

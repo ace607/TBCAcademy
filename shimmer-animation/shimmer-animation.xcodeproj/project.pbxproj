@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84AE0D2F248A7B2300D3776E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE0D2E248A7B2300D3776E /* AppDelegate.swift */; };
+		84AE0D31248A7B2300D3776E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE0D30248A7B2300D3776E /* SceneDelegate.swift */; };
+		84AE0D33248A7B2300D3776E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE0D32248A7B2300D3776E /* ViewController.swift */; };
+		84AE0D36248A7B2300D3776E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AE0D34248A7B2300D3776E /* Main.storyboard */; };
+		84AE0D39248A7B2400D3776E /* shimmer_animation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84AE0D37248A7B2400D3776E /* shimmer_animation.xcdatamodeld */; };
+		84AE0D3B248A7B2B00D3776E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AE0D3A248A7B2B00D3776E /* Assets.xcassets */; };
+		84AE0D3E248A7B2B00D3776E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AE0D3C248A7B2B00D3776E /* LaunchScreen.storyboard */; };
+		84AE0D47248A7F8000D3776E /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE0D46248A7F8000D3776E /* JobTableViewCell.swift */; };
+		84AE0D49248A803D00D3776E /* job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE0D48248A803D00D3776E /* job.swift */; };
+		84AE0D4B248A804800D3776E /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE0D4A248A804800D3776E /* APIServices.swift */; };
+		DAD0E42F6327AA8B11E4CE95 /* Pods_shimmer_animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F02359D2D24491FEEA7A244 /* Pods_shimmer_animation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D4286D4A23F744A84C09BF8 /* Pods-shimmer-animation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shimmer-animation.release.xcconfig"; path = "Target Support Files/Pods-shimmer-animation/Pods-shimmer-animation.release.xcconfig"; sourceTree = "<group>"; };
+		133F629A81DD25C930870B25 /* Pods-shimmer-animation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shimmer-animation.debug.xcconfig"; path = "Target Support Files/Pods-shimmer-animation/Pods-shimmer-animation.debug.xcconfig"; sourceTree = "<group>"; };
+		84AE0D2B248A7B2300D3776E /* shimmer-animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shimmer-animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AE0D2E248A7B2300D3776E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84AE0D30248A7B2300D3776E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84AE0D32248A7B2300D3776E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84AE0D35248A7B2300D3776E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84AE0D38248A7B2400D3776E /* shimmer_animation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = shimmer_animation.xcdatamodel; sourceTree = "<group>"; };
+		84AE0D3A248A7B2B00D3776E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84AE0D3D248A7B2B00D3776E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84AE0D3F248A7B2B00D3776E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84AE0D46248A7F8000D3776E /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+		84AE0D48248A803D00D3776E /* job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = job.swift; sourceTree = "<group>"; };
+		84AE0D4A248A804800D3776E /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		9F02359D2D24491FEEA7A244 /* Pods_shimmer_animation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shimmer_animation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84AE0D28248A7B2300D3776E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAD0E42F6327AA8B11E4CE95 /* Pods_shimmer_animation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84AE0D22248A7B2300D3776E = {
+			isa = PBXGroup;
+			children = (
+				84AE0D2D248A7B2300D3776E /* shimmer-animation */,
+				84AE0D2C248A7B2300D3776E /* Products */,
+				E5B15205C30D5320B85BE31B /* Pods */,
+				FE368C5E442A310540656A2E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84AE0D2C248A7B2300D3776E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84AE0D2B248A7B2300D3776E /* shimmer-animation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84AE0D2D248A7B2300D3776E /* shimmer-animation */ = {
+			isa = PBXGroup;
+			children = (
+				84AE0D45248A7F6D00D3776E /* Models */,
+				84AE0D2E248A7B2300D3776E /* AppDelegate.swift */,
+				84AE0D30248A7B2300D3776E /* SceneDelegate.swift */,
+				84AE0D32248A7B2300D3776E /* ViewController.swift */,
+				84AE0D34248A7B2300D3776E /* Main.storyboard */,
+				84AE0D3A248A7B2B00D3776E /* Assets.xcassets */,
+				84AE0D3C248A7B2B00D3776E /* LaunchScreen.storyboard */,
+				84AE0D3F248A7B2B00D3776E /* Info.plist */,
+				84AE0D37248A7B2400D3776E /* shimmer_animation.xcdatamodeld */,
+				84AE0D4A248A804800D3776E /* APIServices.swift */,
+			);
+			path = "shimmer-animation";
+			sourceTree = "<group>";
+		};
+		84AE0D45248A7F6D00D3776E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84AE0D46248A7F8000D3776E /* JobTableViewCell.swift */,
+				84AE0D48248A803D00D3776E /* job.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E5B15205C30D5320B85BE31B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				133F629A81DD25C930870B25 /* Pods-shimmer-animation.debug.xcconfig */,
+				0D4286D4A23F744A84C09BF8 /* Pods-shimmer-animation.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FE368C5E442A310540656A2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F02359D2D24491FEEA7A244 /* Pods_shimmer_animation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84AE0D2A248A7B2300D3776E /* shimmer-animation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84AE0D42248A7B2B00D3776E /* Build configuration list for PBXNativeTarget "shimmer-animation" */;
+			buildPhases = (
+				6CEBB2FCBD47061506DFB849 /* [CP] Check Pods Manifest.lock */,
+				84AE0D27248A7B2300D3776E /* Sources */,
+				84AE0D28248A7B2300D3776E /* Frameworks */,
+				84AE0D29248A7B2300D3776E /* Resources */,
+				83D6F13B1D3CF8C4D2710A76 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "shimmer-animation";
+			productName = "shimmer-animation";
+			productReference = 84AE0D2B248A7B2300D3776E /* shimmer-animation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84AE0D23248A7B2300D3776E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Mishka TBC";
+				TargetAttributes = {
+					84AE0D2A248A7B2300D3776E = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 84AE0D26248A7B2300D3776E /* Build configuration list for PBXProject "shimmer-animation" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84AE0D22248A7B2300D3776E;
+			productRefGroup = 84AE0D2C248A7B2300D3776E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84AE0D2A248A7B2300D3776E /* shimmer-animation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84AE0D29248A7B2300D3776E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AE0D3E248A7B2B00D3776E /* LaunchScreen.storyboard in Resources */,
+				84AE0D3B248A7B2B00D3776E /* Assets.xcassets in Resources */,
+				84AE0D36248A7B2300D3776E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CEBB2FCBD47061506DFB849 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shimmer-animation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83D6F13B1D3CF8C4D2710A76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-shimmer-animation/Pods-shimmer-animation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-shimmer-animation/Pods-shimmer-animation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-shimmer-animation/Pods-shimmer-animation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84AE0D27248A7B2300D3776E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AE0D33248A7B2300D3776E /* ViewController.swift in Sources */,
+				84AE0D2F248A7B2300D3776E /* AppDelegate.swift in Sources */,
+				84AE0D39248A7B2400D3776E /* shimmer_animation.xcdatamodeld in Sources */,
+				84AE0D49248A803D00D3776E /* job.swift in Sources */,
+				84AE0D31248A7B2300D3776E /* SceneDelegate.swift in Sources */,
+				84AE0D4B248A804800D3776E /* APIServices.swift in Sources */,
+				84AE0D47248A7F8000D3776E /* JobTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84AE0D34248A7B2300D3776E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AE0D35248A7B2300D3776E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84AE0D3C248A7B2B00D3776E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AE0D3D248A7B2B00D3776E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84AE0D40248A7B2B00D3776E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84AE0D41248A7B2B00D3776E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84AE0D43248A7B2B00D3776E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133F629A81DD25C930870B25 /* Pods-shimmer-animation.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "shimmer-animation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mishka.tbc.shimmer-animation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84AE0D44248A7B2B00D3776E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4286D4A23F744A84C09BF8 /* Pods-shimmer-animation.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "shimmer-animation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mishka.tbc.shimmer-animation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84AE0D26248A7B2300D3776E /* Build configuration list for PBXProject "shimmer-animation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AE0D40248A7B2B00D3776E /* Debug */,
+				84AE0D41248A7B2B00D3776E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84AE0D42248A7B2B00D3776E /* Build configuration list for PBXNativeTarget "shimmer-animation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AE0D43248A7B2B00D3776E /* Debug */,
+				84AE0D44248A7B2B00D3776E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84AE0D37248A7B2400D3776E /* shimmer_animation.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84AE0D38248A7B2400D3776E /* shimmer_animation.xcdatamodel */,
+			);
+			currentVersion = 84AE0D38248A7B2400D3776E /* shimmer_animation.xcdatamodel */;
+			path = shimmer_animation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84AE0D23248A7B2300D3776E /* Project object */;
+}

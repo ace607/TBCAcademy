@@ -1,0 +1,30 @@
+PODS:
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - PureLayout (3.0.2)
+  - Shimmer (1.0.2)
+  - ShimmerBlocks (0.1.1):
+    - PureLayout (~> 3.0.2)
+    - Shimmer (~> 1.0.2)
+
+DEPENDENCIES:
+  - Kingfisher (~> 5.0)
+  - ShimmerBlocks
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - PureLayout
+    - Shimmer
+    - ShimmerBlocks
+
+SPEC CHECKSUMS:
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  ShimmerBlocks: fe8fba0be754fae85be8cab8e934050112e1f601
+
+PODFILE CHECKSUM: 1441d4d3630f08b80a6e37831532309f3a494b84
+
+COCOAPODS: 1.9.3
