@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 self.jobTable.reloadData()
                 self.jobTable.alpha = 0
-                UIView.animate(withDuration: 0, animations: {
+                UIView.animate(withDuration: 3, animations: {
                     print("loaded")
                 }) { (f) in
                     self.isLoading = false
