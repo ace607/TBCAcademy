@@ -12,10 +12,10 @@ class ContainerViewController: UIViewController {
 
     @IBOutlet weak var customTabView: UIView!
     
-    var homeViewController: ViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    var homeViewController: HomeViewController = {
+        let storyboard = UIStoryboard(name: "home", bundle: nil)
         
-        let viewController = storyboard.instantiateViewController(identifier: "home_main_controller") as! ViewController
+        let viewController = storyboard.instantiateViewController(identifier: "home_main_controller") as! HomeViewController
         
         return viewController
     }()
