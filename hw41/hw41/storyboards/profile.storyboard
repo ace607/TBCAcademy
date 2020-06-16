@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B3n-vB-OLU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="gfw-Rc-VBm">
+            <objects>
+                <viewController storyboardIdentifier="profile_main_controller" id="B3n-vB-OLU" customClass="ProfileViewController" customModule="hw41" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mVY-4G-6ZX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your profile page here with a creepy photo of you eating banana" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZu-i2-Gab">
+                                <rect key="frame" x="30" y="423" width="354" height="50.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DZu-i2-Gab" secondAttribute="trailing" constant="30" id="YnH-xP-quZ"/>
+                            <constraint firstItem="DZu-i2-Gab" firstAttribute="centerY" secondItem="mVY-4G-6ZX" secondAttribute="centerY" id="wKu-QG-ljK"/>
+                            <constraint firstItem="DZu-i2-Gab" firstAttribute="leading" secondItem="mVY-4G-6ZX" secondAttribute="leading" constant="30" id="xaR-6G-aUz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="os4-3X-RFl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lwp-ZJ-Ekp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqv-jB-3cx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>

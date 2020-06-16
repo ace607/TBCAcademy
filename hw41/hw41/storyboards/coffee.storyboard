@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TSY-w6-TJe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Coffee View Controller-->
+        <scene sceneID="aRz-6t-KqR">
+            <objects>
+                <viewController storyboardIdentifier="coffee_main_controller" id="TSY-w6-TJe" customClass="CoffeeViewController" customModule="hw41" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kzi-Gw-s9L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our menu heree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt8-tl-VMy">
+                                <rect key="frame" x="128.5" y="435.5" width="157.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qt8-tl-VMy" firstAttribute="centerY" secondItem="kzi-Gw-s9L" secondAttribute="centerY" id="aXZ-Fc-DTp"/>
+                            <constraint firstItem="qt8-tl-VMy" firstAttribute="centerX" secondItem="kzi-Gw-s9L" secondAttribute="centerX" id="mUU-SL-RHe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sXP-e5-SXV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QZb-av-ybq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZD-xV-n4n" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>

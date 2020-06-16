@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wUM-4U-cVz">
+            <objects>
+                <viewController storyboardIdentifier="home_main_controller" id="40g-Io-8Qv" customClass="ViewController" customModule="hw41" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GKy-Sz-L0b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNg-Ac-dbV">
+                                <rect key="frame" x="24" y="71" width="23" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="SZQ-Qy-51O"/>
+                                    <constraint firstAttribute="width" constant="23" id="pK4-2G-xQP"/>
+                                </constraints>
+                                <state key="normal" image="menu-icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqe-Ny-c5q">
+                                <rect key="frame" x="369" y="71" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gmx-wu-NSR"/>
+                                    <constraint firstAttribute="width" constant="21" id="h4K-tR-6aK"/>
+                                </constraints>
+                                <state key="normal" image="search-icon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRV-24-Aoa">
+                                <rect key="frame" x="24" y="132" width="366" height="86"/>
+                                <string key="text">It's Great Day for
+Coffee.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ji-jN-aDY">
+                                <rect key="frame" x="0.0" y="223" width="414" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="coffee_cell" id="8U8-uL-CW5" customClass="CoffeeTableViewCell" customModule="hw41" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="110.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8U8-uL-CW5" id="OKO-WD-QNV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Espresso" translatesAutoresizingMaskIntoConstraints="NO" id="CML-NY-9dC">
+                                                    <rect key="frame" x="30" y="25" width="60" height="60.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="1xf-Bc-4eU"/>
+                                                        <constraint firstAttribute="width" constant="60" id="wgf-zW-epn"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qy-52-F0a">
+                                                    <rect key="frame" x="120" y="43.5" width="115" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.1764705882" green="0.078431372550000003" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-icon" translatesAutoresizingMaskIntoConstraints="NO" id="cdm-51-8Kv">
+                                                    <rect key="frame" x="380" y="48" width="9" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="0Js-ws-DLm"/>
+                                                        <constraint firstAttribute="width" constant="9" id="KyV-mr-3rL"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CML-NY-9dC" firstAttribute="top" secondItem="OKO-WD-QNV" secondAttribute="top" constant="25" id="0do-qC-vW0"/>
+                                                <constraint firstItem="9qy-52-F0a" firstAttribute="leading" secondItem="CML-NY-9dC" secondAttribute="trailing" constant="30" id="Hft-Ye-KwB"/>
+                                                <constraint firstItem="cdm-51-8Kv" firstAttribute="centerY" secondItem="OKO-WD-QNV" secondAttribute="centerY" id="MLm-ne-2vA"/>
+                                                <constraint firstItem="CML-NY-9dC" firstAttribute="leading" secondItem="OKO-WD-QNV" secondAttribute="leading" constant="30" id="k75-N1-Whf"/>
+                                                <constraint firstAttribute="trailing" secondItem="cdm-51-8Kv" secondAttribute="trailing" constant="25" id="m8I-tP-3Ju"/>
+                                                <constraint firstAttribute="bottom" secondItem="CML-NY-9dC" secondAttribute="bottom" constant="25" id="mxc-xT-re7"/>
+                                                <constraint firstItem="9qy-52-F0a" firstAttribute="centerY" secondItem="CML-NY-9dC" secondAttribute="centerY" id="o6o-su-Gyy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="img" destination="CML-NY-9dC" id="lG9-7M-eOx"/>
+                                            <outlet property="name" destination="9qy-52-F0a" id="5wt-aI-Sed"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.95686274510000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7ji-jN-aDY" firstAttribute="leading" secondItem="ph0-88-qoa" secondAttribute="leading" id="ASv-5Q-74K"/>
+                            <constraint firstItem="MNg-Ac-dbV" firstAttribute="top" secondItem="ph0-88-qoa" secondAttribute="top" constant="27" id="Bsa-Kp-0RA"/>
+                            <constraint firstItem="ph0-88-qoa" firstAttribute="trailing" secondItem="Lqe-Ny-c5q" secondAttribute="trailing" constant="24" id="Vq9-WZ-g9r"/>
+                            <constraint firstItem="FRV-24-Aoa" firstAttribute="top" secondItem="MNg-Ac-dbV" secondAttribute="bottom" constant="43" id="dVA-nm-RuX"/>
+                            <constraint firstAttribute="bottom" secondItem="7ji-jN-aDY" secondAttribute="bottom" constant="90" id="iSc-qg-fBD"/>
+                            <constraint firstItem="Lqe-Ny-c5q" firstAttribute="top" secondItem="ph0-88-qoa" secondAttribute="top" constant="27" id="oPT-Zs-6Jf"/>
+                            <constraint firstItem="ph0-88-qoa" firstAttribute="trailing" secondItem="FRV-24-Aoa" secondAttribute="trailing" constant="24" id="qIQ-RA-MSe"/>
+                            <constraint firstItem="MNg-Ac-dbV" firstAttribute="leading" secondItem="ph0-88-qoa" secondAttribute="leading" constant="24" id="rNm-OQ-H4E"/>
+                            <constraint firstItem="FRV-24-Aoa" firstAttribute="leading" secondItem="ph0-88-qoa" secondAttribute="leading" constant="24" id="wgZ-PC-xMP"/>
+                            <constraint firstItem="ph0-88-qoa" firstAttribute="trailing" secondItem="7ji-jN-aDY" secondAttribute="trailing" id="xbP-g0-nEh"/>
+                            <constraint firstItem="7ji-jN-aDY" firstAttribute="top" secondItem="FRV-24-Aoa" secondAttribute="bottom" constant="5" id="zXJ-F6-JaU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ph0-88-qoa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0XQ-DL-Bsc"/>
+                    <connections>
+                        <outlet property="coffeeTable" destination="7ji-jN-aDY" id="BgW-g4-QKS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56R-fn-UNN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Espresso" width="56" height="57"/>
+        <image name="menu-icon" width="23" height="18"/>
+        <image name="next-icon" width="9" height="15"/>
+        <image name="search-icon" width="24" height="24"/>
+    </resources>
+</document>
