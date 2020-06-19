@@ -12,13 +12,9 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var coffeeTable: UITableView!
     
-    var coffeeList = [
-        (name: "Espresso", img: "Espresso"),
-        (name: "Cappuccino", img: "Cappuccino"),
-        (name: "Macchiato", img: "macciato"),
-        (name: "Mocha", img: "Mocha"),
-        (name: "Latte", img: "latte")
-    ]
+    var coffees = [Coffee]()
+    
+    let viewModel = CoffeeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,31 +24,39 @@ class HomeViewController: UIViewController {
         coffeeTable.dataSource = self
         coffeeTable.separatorStyle = .none
         
+        coffees = viewModel.getCoffees
+        
+        
     }
 
 
 }
 
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "show_detail", sender: nil)
+        
+        let storyboard = UIStoryboard(name: "home", bundle: nil)
+        
+        let viewController = storyboard.instantiateViewController(identifier: "details_controller") as! DetailsViewController
+        
+        viewController.currentCoffee = coffees[indexPath.row]
+        
+        navigationController?.pushViewController(viewController, animated: true)
+    }
     
 }
-
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coffeeList.count
+        return coffees.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = coffeeTable.dequeueReusableCell(withIdentifier: "coffee_cell", for: indexPath) as! CoffeeTableViewCell
         
-        cell.img.image = UIImage(named: coffeeList[indexPath.row].img)
-        cell.name.text = coffeeList[indexPath.row].name
-        cell.backgroundColor = UIColor.clear
+        cell.coffee = coffees[indexPath.row]
         
         
         return cell
     }
-    
-    
 }
-

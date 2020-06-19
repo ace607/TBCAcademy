@@ -12,10 +12,10 @@ class ContainerViewController: UIViewController {
 
     @IBOutlet weak var customTabView: UIView!
     
-    var homeViewController: HomeViewController = {
+    var homeViewController: UINavigationController = {
         let storyboard = UIStoryboard(name: "home", bundle: nil)
         
-        let viewController = storyboard.instantiateViewController(identifier: "home_main_controller") as! HomeViewController
+        let viewController = storyboard.instantiateViewController(identifier: "home_navigation") as! UINavigationController
         
         return viewController
     }()
@@ -27,10 +27,10 @@ class ContainerViewController: UIViewController {
         
         return viewController
     }()
-    var coffeeViewController: CoffeeViewController = {
+    var ordersViewController: OrdersViewController = {
         let storyboard = UIStoryboard(name: "coffee", bundle: Bundle.main)
         
-        let viewController = storyboard.instantiateViewController(identifier: "coffee_main_controller") as! CoffeeViewController
+        let viewController = storyboard.instantiateViewController(identifier: "coffee_main_controller") as! OrdersViewController
         
         return viewController
     }()
@@ -57,13 +57,14 @@ class ContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         customTabView.layer.cornerRadius = 46
         customTabView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         customTabView.layer.masksToBounds = true
         
         updateTabs()
+        
         
     }
     
@@ -80,8 +81,8 @@ class ContainerViewController: UIViewController {
             lastView = mapViewController.view
             selectedItem = 1
         case 2:
-            view.insertSubview(coffeeViewController.view, belowSubview: customTabView)
-            lastView = coffeeViewController.view
+            view.insertSubview(ordersViewController.view, belowSubview: customTabView)
+            lastView = ordersViewController.view
             selectedItem = 2
         case 3:
             view.insertSubview(profileViewController.view, belowSubview: customTabView)
@@ -94,6 +95,7 @@ class ContainerViewController: UIViewController {
         view.layoutIfNeeded()
         
     }
+    
     
     func updateTabs() {
         tabItemsStack.subviews.forEach { (b) in
@@ -114,15 +116,5 @@ class ContainerViewController: UIViewController {
     @IBAction func onProfile(_ sender: UIButton) {
         changeController(id: 3)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

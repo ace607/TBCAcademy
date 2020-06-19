@@ -1,0 +1,29 @@
+{
+    "List": [
+        {
+            "Name": "Espresso",
+            "Photo": "https://i.imgur.com/Zosicmf.png",
+            "Price": 5.50
+        },
+        {
+            "Name": "Cappuccino",
+            "Photo": "https://i.imgur.com/IHlYDy7.png",
+            "Price": 4.00
+        },
+        {
+            "Name": "Macchiato",
+            "Photo": "https://i.imgur.com/pvgO34h.png",
+            "Price": 5.30
+        },
+        {
+            "Name": "Mocha",
+            "Photo": "https://i.imgur.com/UWlZKQb.png",
+            "Price": 6.30
+        },
+        {
+            "Name": "Latte",
+            "Photo": "https://i.imgur.com/D857HRj.png",
+            "Price": 5.00
+        }
+    ]
+}

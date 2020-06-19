@@ -10,7 +10,7 @@
         <!--Container View Controller-->
         <scene sceneID="AWm-rb-QJB">
             <objects>
-                <viewController id="LUh-q2-8nY" customClass="ContainerViewController" customModule="hw41" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="container_controller" id="LUh-q2-8nY" customClass="ContainerViewController" customModule="hw41" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pLW-8R-rf8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,36 +80,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1l-pD-7p8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="598.55072463768124" y="827.67857142857144"/>
-        </scene>
-        <!--map_main_controller-->
-        <scene sceneID="hHO-Q2-pYt">
-            <objects>
-                <viewControllerPlaceholder storyboardName="map" referencedIdentifier="map_main_controller" id="j5Y-MD-PRF" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="27c-Ff-WaC"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H0Y-Pe-fmm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1689.8550724637682" y="153.34821428571428"/>
-        </scene>
-        <!--coffee_main_controller-->
-        <scene sceneID="Klg-B0-gAk">
-            <objects>
-                <viewControllerPlaceholder storyboardName="coffee" referencedIdentifier="coffee_main_controller" id="xfc-a5-k6V" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Jky-mN-b3h"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hpc-Hc-Yta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1690" y="196"/>
-        </scene>
-        <!--profile_main_controller-->
-        <scene sceneID="dQL-JV-qga">
-            <objects>
-                <viewControllerPlaceholder storyboardName="profile" referencedIdentifier="profile_main_controller" id="6VJ-4V-pQH" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="PBl-GU-sS4"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ev2-2M-zfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1690" y="238"/>
         </scene>
     </scenes>
     <resources>

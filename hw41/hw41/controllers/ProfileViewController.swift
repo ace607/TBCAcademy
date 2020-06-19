@@ -7,16 +7,32 @@
 //
 
 import UIKit
+import Localize
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var langSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if Localize.currentLanguage == "ge" {
+            langSwitch.setOn(true, animated: false)
+        } else {
+            langSwitch.setOn(false, animated: false)
+
+        }
     }
     
-
+    @IBAction func switchToGe(_ sender: UISwitch) {
+        if langSwitch.isOn {
+            Localize.update(language: "ge")
+        } else {
+            Localize.update(language: "en")
+        }
+        NotificationCenter.default.post(name: NSNotification.Name("update_orders"), object: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
