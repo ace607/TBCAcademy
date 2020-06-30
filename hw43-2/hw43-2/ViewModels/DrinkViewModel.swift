@@ -16,6 +16,7 @@ class DrinkViewModel {
         
         service.fetchCategory(category: category) { (category) in
             category.drinks.forEach { (categoryDrink) in
+                
                 service.fetchDrink(id: categoryDrink.id) { (drink) in
                     drink.image.downloadImage { (img) in
                         drinks.append((drink, img!))
