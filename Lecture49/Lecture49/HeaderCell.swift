@@ -14,8 +14,18 @@ class HeaderCell: UITableViewCell {
     
     public static let identifier = "HeaderCell"
     
-    var didSelectItemAction: ((IndexPath) -> Void)?
-
+    var didSelectItemAction: ((IndexPath, StoryCell) -> Void)?
+    
+    var imgs = [
+        UIImage(named: "1"),
+        UIImage(named: "2"),
+        UIImage(named: "3"),
+        UIImage(named: "4"),
+        UIImage(named: "5"),
+        UIImage(named: "6"),
+        UIImage(named: "7"),
+        UIImage(named: "8")
+    ]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +56,8 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryCell.identifier, for: indexPath) as! StoryCell
         
+        cell.imageView.image = imgs[indexPath.row]
+        
         return cell
     }
     
@@ -58,11 +70,11 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 30, bottom: 0, right: 15)
+        return .init(top: 0, left: 30, bottom: 0, right: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didSelectItemAction?(indexPath)
+        didSelectItemAction?(indexPath, collectionView.cellForItem(at: indexPath) as! StoryCell)
     }
 }
 
@@ -72,6 +84,7 @@ class StoryCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.layer.masksToBounds = true
         iv.layer.cornerRadius = 85/2
         iv.layer.borderWidth = 4
         iv.layer.borderColor = UIColor.red.cgColor
