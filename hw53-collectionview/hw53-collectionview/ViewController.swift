@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -24,60 +25,130 @@ class ViewController: UIViewController {
         Place(img: UIImage(named: "image10")!, title: "Pellentesque", desc: "Nulla cursus molestie nunc, sed placerat quam viverra ac.")
     ]
     
+    var selectedPlace: Place?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
+            layout.delegate = self
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        for item in places {
+            addPlaces(title: item.title, image: item.img, desc: item.desc)
+        }
+        
+        collectionView.reloadData()
     }
-
-
+    
+    
+    private func fetchPlaces() -> [PlaceModel] {
+        
+        let context = AppDelegate.coreDataContainer.viewContext
+        
+        let request: NSFetchRequest<PlaceModel> = PlaceModel.fetchRequest()
+        
+        do {
+            let result = try context.fetch(request)
+            
+            let places = result as [PlaceModel]
+            
+            return places
+        } catch {
+            print("ERROR: Couldn't fetch podcasts")
+        }
+        
+        return []
+        
+    }
+    
+    private func addPlaces(title: String, image: UIImage, desc: String) {
+        
+        let context = AppDelegate.coreDataContainer.viewContext
+        let entityDescription = NSEntityDescription.entity(forEntityName: "PlaceModel", in: context)
+        
+        if fetchPlaces().contains(where: { $0.title == title && image.pngData()! == $0.img! && $0.desc == desc }) { return }
+        
+        let place = PlaceModel(entity: entityDescription!, insertInto: context)
+        
+        place.title = title
+        
+        if let binaryImage = image.pngData() {
+            place.img = binaryImage
+        }
+        
+        place.desc = desc
+        
+        do {
+            try context.save()
+        } catch {
+            
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier, identifier == "show_details" {
+            if let detailsVC = segue.destination as? DetailsViewController {
+                detailsVC.place = selectedPlace!
+            }
+        }
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selected = fetchPlaces()[indexPath.row]
+        
+        self.selectedPlace = Place(img: UIImage(data: selected.img!)!, title: selected.title!, desc: selected.desc!)
+        performSegue(withIdentifier: "show_details", sender: nil)
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return fetchPlaces().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "place_cell", for: indexPath) as! PlaceCollectionViewCell
         
-        cell.placePhoto.image = indexPath.section == 0 ? places[indexPath.row].img : places[indexPath.row * 2].img
-        cell.placeTitle.text = indexPath.section == 0 ? places[indexPath.row].title : places[indexPath.row * 2].title
-        cell.placeDesc.text = indexPath.section == 0 ? places[indexPath.row].desc : places[indexPath.row * 2].desc
+        cell.placePhoto.image = UIImage(data: fetchPlaces()[indexPath.row].img!)
+        cell.placeTitle.text = fetchPlaces()[indexPath.row].title
+        cell.placeDesc.text = fetchPlaces()[indexPath.row].desc
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        
+        return CGSize(width: itemSize, height: itemSize + 60)
+    }
     
 }
 
-
-extension ViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let cellImage = places[indexPath.row].img
-        
-        let width = self.view.frame.width / 2 - 40
-        let height = width * cellImage.getRatio()
-        
-        return CGSize(width: width, height: height)
+extension UIImage {
+    func getRatio() -> CGFloat {
+        return self.size.height / self.size.width
     }
 }
 
-
-extension UIImage {
-    func getRatio() -> CGFloat {
-        return self.size.width / self.size.height
+extension ViewController: CustomLayoutDelegate {
+    func collectionView( _ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+        
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        let cellImage = UIImage(data: fetchPlaces()[indexPath.row].img!)!
+        
+        let height = itemSize * cellImage.getRatio() + 60
+        return height
     }
+    
+    
 }
